@@ -3,7 +3,7 @@
 My Final Project!
 
 Final Links of interest:<br/>
-1. My Page Speed Test: <a href="cchinaka.github.io/webopt/index.html">cchinaka.github.io/webopt/index.html</a>
+1. My Page Speed Test: <a href="cchinaka.github.io/webopt/index.html">cchinaka.github.io/webopt/index.html</a><br/>
 2. Scrolling optimizations: <a href="https://cchinaka.github.io/webopt/views/pizza.html">https://cchinaka.github.io/webopt/views/pizza.html</a>
 
 
@@ -19,7 +19,7 @@ Final Links of interest:<br/>
 7. Images got squished to an average percentage of 80% reduction in image size
 
 ####Note: 
-** The new pagespeed - Mobile - 95/100; Desktop: 96/100
+1. The new pagespeed - Mobile - 95/100; Desktop: 96/100
 
 ### Scrolling - Jank Fixes:
 
