@@ -40,8 +40,8 @@ b. within doActualUpdatePositions: forced synchronous layout detected in update 
 
 
 ### Resources Referenced
-**<a href="http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/">http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/</a>
-**<a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization?hl=en">https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization?hl=en</a>
+1. <a href="http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/">http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/</a>
+2. <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization?hl=en">https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization?hl=en</a>
 
 
 
