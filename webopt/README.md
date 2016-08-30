@@ -1,55 +1,48 @@
 ## Website Performance Optimization portfolio project - final working nicely
 
-Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
+My Final Project!
 
-To get started, check out the repository and inspect the code.
+Final Links of interest:<br/>
+1. My Page Speed Test: <a href="cchinaka.github.io/webopt/index.html">cchinaka.github.io/webopt/index.html</a>
+2. Scrolling optimizations: <a href="https://cchinaka.github.io/webopt/views/pizza.html">https://cchinaka.github.io/webopt/views/pizza.html</a>
 
-### Getting started
 
-####Part 1: Optimize PageSpeed Insights score for index.html
+##Work Done
 
-Some useful tips to help you get started:
+### Page Speed optimizations:
+1. Added media="print" to print.css as it's only required on a print.
+2. Moved a minimized version of style.css content directly into the pages that required it, thereby eliminating the need for it as a critical resource
+3. Set a width to all of the images to help the browser render it faster, removed the width image setting of 100%.
+4. Not sure where to setup my caching on the server as providing it back in github for viewing, but i would like to apply the following to the fonts
+5. Have the server provide a long-lived max-age timestamp as i don't expect to change this font. (COULD NOT DO)
+6. I used webfontloader, loaded asynchronously, to load the fonts as it reduces the number of critical resources by one and has the added advantage of rendering the font once available
+7. Images got squished to an average percentage of 80% reduction in image size
 
-1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
+####Note: 
+** The new pagespeed - Mobile - 95/100; Desktop: 96/100
 
-  ```bash
-  $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8080...
-  ```
+### Scrolling - Jank Fixes:
 
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to the top-level of your project directory to make your local server accessible remotely.
+*All work done was in views/js/main.js*
 
-  ``` bash
-  $> cd /path/to/your-project-folder
-  $> ./ngrok http 8080
-  ```
+1. changePizzaSizes:forced synchronous layout detected
+Solution applied for forced synchronous layout detected here. The fix applied was to separate the read of element attributes AND the application of new values to them.
 
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
+2. updatePositions():
+Solutions the fix applied here is two fold.
+a. The updatePositions has been applied to requestAnimationFrame to ensure the process kicks off as close to the frame start as possible. and reduce jank
+b. within doActualUpdatePositions: forced synchronous layout detected in update style left attribute of elements.
+    The fix applied was, again, to separate the read of element attributes AND the application of new values to them.
+3. Optimized Image pizzeria.jpg. INCLUDED an alternative image of larger size pizzeria-lg.jpg
 
-Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
+####Note:
+1. I think the animation can be further optimized by moving the animations to CSS.
 
-####Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+### Resources Referenced
+**<a href="http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/">http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/</a>
+**<a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization?hl=en">https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization?hl=en</a>
 
-You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
-### Optimization Tips and Tricks
-* [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
-* [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
-* [Optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path.html "optimize the crp!")
-* [Avoiding Rendering Blocking CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css.html "render blocking css")
-* [Optimizing JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript.html "javascript")
-* [Measuring with Navigation Timing](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp.html "nav timing api"). We didn't cover the Navigation Timing API in the first two lessons but it's an incredibly useful tool for automated page profiling. I highly recommend reading.
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/eliminate-downloads.html">The fewer the downloads, the better</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html">Reduce the size of text</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Optimize images</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching</a>
 
-### Customization with Bootstrap
-The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstrap</a> framework. All custom styles are in `dist/css/portfolio.css` in the portfolio repo.
-
-* <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
-* <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+#I feel so good!!
